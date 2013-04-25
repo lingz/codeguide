@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Codeguide</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script> $(window).load(function(){ $('.buttons, #house, #at_sign, #question_mark, #login, .codeguide, .languages, #python, #java, #html, #css, #results, #overlay > div, #exit').css('opacity', '0');
+ $('#overlay > div, exit').hide(); startup(); $("#search_options, #external_select").hide();
+});
+</script>
+</head>
+
+<body>
+
+<div id="frame">
+<div id="overlay">
+		<div id="blackout"></div>
+		<div id="prompt"></div>
+		<img id="exit" src="./images/exit.png" onclick="hideOverlay()" />
+	</div>
+<div id="sidebar">
+</div>
+<div id="middle">
+<div id="home" class ="navbar" >
+	<div class="buttons"> 
+    	<a href="http://i5.abudhabi.nyu.edu/~lz781/"><img id="house" class ="link" src="./images/house.png" /></a>
+        <img id="at_sign" class ="link" src="./images/at_sign.png" onclick="showOverlay('at_sign')"/>
+        <img id="question_mark" class ="link" src="./images/question_mark.png" onclick="showOverlay('question_mark')"/>
+        <img id="login" class ="link" src="./images/login.png" onclick="showOverlay('login')"/>
+    </div>
+    <div class="codeguide" id="codeguide">
+	<a href="http://i5.abudhabi.nyu.edu/~lz781/"><img src="./images/codeguide.png" /></a>
+	</div>
+    <div class="languages">
+    	<div id="search_options" style="clear: both;">
+	<ul>
+  		<li><span id="version_selector" onclick="change_version()">Version 3.2</span>
+    		<ul class="version_list">
+    			<li id="2.6" onclick="version_select(this);"><span>2.6</span></li>
+    			<li id="2.7" onclick="version_select(this);"><span>2.7</span></li>
+    			<li id="3.0" onclick="version_select(this);"><span>3.0</span></li>
+    			<li id="3.1" onclick="version_select(this);"><span>3.1</span></li>
+    			<li id="3.2" onclick="version_select(this);"><span>3.2</span></li>
+    			<li id="3.3" onclick="version_select(this);"><span>3.3</span></li>
+    			<li id="3.4" onclick="version_select(this);"><span>3.4</span></li>
+    		</ul>
+  		</li>
+  	</ul>
+  	</div>
+	<div style="clear: both;">
+		<input id = "external_select" type="button" value="Unofficial Modules" onclick="toggle_external();">
+	</div>
+    	<img id="python" class ="link" src="./images/python-r2.png" onclick="changeLock('python')"/>
+        <img id="java" class ="link" src="./images/java-r2.png" onclick="changeLock('java')"/>
+        <img id="html" class ="link" src="./images/html-r2.png" onclick="changeLock('html')"/>
+        <img id="css" class ="link"  src="./images/css-r2.png" onclick="changeLock('css')"/>
+    </div>
+    <div class="search">
+	<form id="searchContainer" id="#activeSearch"></form>
+	</div>
+	<div id="resultDivider">
+	</div>
+	</div>
+<div id ="results"></div>
+
+</div>
+
+<div id="rightbar"></div>
+</div>
+</body>
+</html>
